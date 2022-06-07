@@ -1,0 +1,108 @@
+#mainDiv {
+    display: grid;
+    grid-template-columns: 340px 500px;
+    grid-gap: 10px;
+}
+
+#editorBtn {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* add items */
+#addItems {
+    display: grid;
+    grid-template-areas: "a a a c d"
+                         "b b b b b"
+                         "e e e e e";
+    grid-template-rows: 25px 100px 25px;
+    grid-gap: 10px;
+    grid-template-columns: repeat(5, 60px);
+    padding-top: 10px;
+}
+#addItemsName {
+    grid-area: a;
+}
+#addItemsDiscription {
+    grid-area: b;
+}
+#addItemsAdd {
+    grid-area: e;
+}
+
+/* add title */
+#addTitle {
+    display: grid;
+    grid-template-areas: "a";
+    grid-gap: 10px;
+    grid-template-columns: 340px;
+    grid-template-rows: 25px 25px;
+    padding-top: 10px;
+}
+
+/* remove */
+#remove {
+    display: grid;
+    grid-template-areas: "a";
+    grid-gap: 10px;
+    grid-template-columns: 340px;
+    grid-template-rows: 25px 25px;
+    padding-top: 10px;
+}
+
+/* page */
+#Page {
+    border:2px solid black ;
+    height: 815px;
+    width: 580px;
+}
+#pageContent {
+    margin:40px;
+    border:2px solid black;
+    height: auto;
+}
+    /* title */
+    h3{
+        margin: 0px;
+        padding: 0px;
+        color: red;
+    }
+    /* item */
+    #item{
+        display: grid;
+        grid-template-areas: "a a a a a a b c"
+                             "d d d d d d e e";
+        grid-template-columns: auto auto auto auto auto auto 50px 50px;        
+    }
+    #title{
+        margin: 0;
+        padding: 0;
+        margin-left: 10px; 
+        margin-top: 10px;
+        grid-area: a;
+    }
+    #prijs {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        grid-area: c;
+        text-align: right;
+    }
+    #prijshalf {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        grid-area: b;
+        text-align: right;
+
+    }
+    #discription{
+        margin: 0;
+        padding: 0;
+        margin-left: 20px;
+        grid-area: d;
+
+    }
+
+
