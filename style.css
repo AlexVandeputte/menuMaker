@@ -1,22 +1,64 @@
+body{
+    background-color: #1e1e1e;
+    font-family: 'Times New Roman', Times, serif;
+}
 #mainDiv {
     display: grid;
-    grid-template-columns: 340px 500px;
+    grid-template-areas: "a b"
+                         "c d"
+                         'e f';
+    grid-template-columns: 340px 584px;
+    grid-template-rows: 819px 25px 25px;
     grid-gap: 10px;
+    width: 924px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#saveBtn{
+    grid-area: d;
+    color: #fde5e8;
+    text-align: center;
+    background-color: #df474b;
+    line-height: 25px;
+    border: 0;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+
+}
+#loadBtn {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+#loadBtn + label{
+    grid-area: f;
+    color: #fde5e8;
+    text-align: center;
+    background-color: #df474b;
+    line-height: 25px;
+    border: 0;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
 }
 
 #editorBtn {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a b c";
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 25px
 }
 
 /* add items */
 #addItems {
     display: grid;
     grid-template-areas: "a a a c d"
+                         "f f f f f"
                          "b b b b b"
                          "e e e e e";
-    grid-template-rows: 25px 100px 25px;
+    grid-template-rows: 25px 25px 100px 25px;
     grid-gap: 10px;
     grid-template-columns: repeat(5, 60px);
     padding-top: 10px;
@@ -30,6 +72,10 @@
 #addItemsAdd {
     grid-area: e;
 }
+#addItemsPlace {
+    grid-area: f;
+
+}
 
 /* add title */
 #addTitle {
@@ -37,9 +83,10 @@
     grid-template-areas: "a";
     grid-gap: 10px;
     grid-template-columns: 340px;
-    grid-template-rows: 25px 25px;
+    grid-template-rows: 25px 25px 100px 25px;
     padding-top: 10px;
 }
+
 
 /* remove */
 #remove {
@@ -56,43 +103,55 @@
     border:2px solid black ;
     height: 815px;
     width: 580px;
+    background-color: wheat;
 }
 #pageContent {
-    margin:40px;
-    border:2px solid black;
+    margin:30px;
+    /* border:2px solid black; */
     height: auto;
 }
     /* title */
+    #divTitle {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+    }
     h3{
         margin: 0px;
         padding: 0px;
         color: red;
+    }
+    #titleDiscription {
+        margin: 0;
+        padding: 0;
+        margin-top: 2px;
+        color: red;
+        
     }
     /* item */
     #item{
         display: grid;
         grid-template-areas: "a a a a a a b c"
                              "d d d d d d e e";
-        grid-template-columns: auto auto auto auto auto auto 50px 50px;        
+        grid-template-columns: auto auto auto auto auto auto 50px 50px;    
+        margin-bottom: 5px;    
+        margin-right: 10px;
     }
     #title{
         margin: 0;
         padding: 0;
         margin-left: 10px; 
-        margin-top: 10px;
         grid-area: a;
     }
     #prijs {
         margin: 0;
         padding: 0;
-        margin-top: 10px;
         grid-area: c;
         text-align: right;
     }
     #prijshalf {
         margin: 0;
         padding: 0;
-        margin-top: 10px;
         grid-area: b;
         text-align: right;
 
