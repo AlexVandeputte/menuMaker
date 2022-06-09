@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="mainDiv">
-        <div id="editor">
-            <div id="editorBtn">
-                <input id="addItemsBtn" type="button" value="Add Items">
-                <input id="addTitleBtn" type="button" value="Add Title">
-                <input id="removeBtn" type="button" value="remove">
-
-            </div>
-            <div id="addItems">
-                <input type="text" id="addItemsName" value="name">
-                <input type="text" id="addItemsPrice" value="price">
-                <input type="text" id="addItemsHalf" value="1/2 price">
-                <textarea id="addItemsDiscription" cols="30" rows="10"></textarea>
-                <input type="button" id="addItemsAdd" value="Add">
-                <input type="text" id="addItemsPlace" value="place">
-            </div>
-            <div id="addTitle">
-                <input type="text" id="addTitleName" value="name">
-                <input type="text" id="addTitlePlace" value="place">
-                <textarea id="addTitleDiscription" cols="30" rows="10"></textarea>
-                <input type="button" id="addTitleAdd" value="Add">
-            </div>
-            <div id="remove">
-                <input type="text" id="removeId" value="id">
-                <input id="removeConfirm" type="button" value="Remove">
-            </div>
+      <div id="editor">
+        <div id="editorBtn">
+          <input id="addItemsBtn" type="button" value="Add Items" />
+          <input id="addTitleBtn" type="button" value="Add Title" />
+          <input id="removeBtn" type="button" value="remove" />
         </div>
-        <div id="Page">
-            <div id="pageContent">
-                <div id="divTitle">
-                    <textarea spellcheck="false" id="titleTitle" rows="1">genieten</textarea>
-                    <textarea spellcheck="false" id="titleDiscription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate hic, fugiat in, eius necessitatibus autem harum, ab quas amet ipsa consectetur voluptatem quasi nulla dolorum mollitia illum? Voluptas, voluptatum magni?</textarea>
-                </div>
-                <div id="item">
-                    <h4 id="title">Carpaccio</h4>
-                    <h4 id="prijs">&euro;14</h4>
-                    <h4 id="prijshalf">&euro;8</h4>
-                    <p id="discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel maxime provident nobis explicabo assumenda. In aperiam impedit sequi ducimus facere laudantium velit, corporis voluptate doloribus quo minus blanditiis natus voluptatibus!</p>
-                </div>
-                <div id="item">
-                    <h4 id="title">Carpaccio</h4>
-                    <h4 id="prijs">&euro;14</h4>
-                    <h4 id="prijshalf">&euro;8</h4>
-                    <p id="discription">met bijhorend brood</p>
-                </div>
-                <div id="divTitle">
-                    <h3>genieten</h3>
-                    <textarea spellcheck="false" id="titleDiscription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate hic, fugiat in, eius necessitatibus autem harum, ab quas amet ipsa consectetur voluptatem quasi nulla dolorum mollitia illum? Voluptas, voluptatum magni?</textarea>
-                </div>
-            </div>
+        <div id="addItems">
+          <input type="text" id="addItemsName" value="name" />
+          <input type="text" id="addItemsPrice" value="price" />
+          <input type="text" id="addItemsHalf" value="1/2 price" />
+          <textarea id="addItemsDiscription" cols="30" rows="10"></textarea>
+          <input type="button" id="addItemsAdd" value="Add" />
+          <input type="text" id="addItemsPlace" value="place" />
         </div>
-        <input id="saveBtn" type="button" value="save">
-        <input id="loadBtn" type="file">
-        <label for="loadBtn">load</label>
+        <div id="addTitle">
+          <input type="text" id="addTitleName" value="name" />
+          <input type="text" id="addTitlePlace" value="place" />
+          <textarea id="addTitleDiscription" cols="30" rows="10"></textarea>
+          <input type="button" id="addTitleAdd" value="Add" />
+        </div>
+        <div id="remove">
+          <input type="text" id="removeId" value="id" />
+          <input id="removeConfirm" type="button" value="Remove" />
+        </div>
+      </div>
+      <div id="Page">
+        <div id="pageContent">
+          <div id="divTitle">
+            <textarea spellcheck="false" id="titleTitle" rows="1">
+genieten</textarea
+            >
+            <textarea spellcheck="false" id="titleDiscription">
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate hic, fugiat in, eius necessitatibus autem harum, ab quas amet ipsa consectetur voluptatem quasi nulla dolorum mollitia illum? Voluptas, voluptatum magni?</textarea
+            >
+          </div>
+          <div id="item">
+            <textarea id="itemTitle" rows="1">Carpaccio</textarea>
+            <h4 id="prijs">&euro;14</h4>
+            <h4 id="prijshalf">&euro;8</h4>
+            <p id="discription">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+              maxime provident nobis explicabo assumenda. In aperiam impedit
+              sequi ducimus facere laudantium velit, corporis voluptate
+              doloribus quo minus blanditiis natus voluptatibus!
+            </p>
+          </div>
+          <div id="item">
+            <h4 id="title">Carpaccio</h4>
+            <h4 id="prijs">&euro;14</h4>
+            <h4 id="prijshalf">&euro;8</h4>
+            <p id="discription">met bijhorend brood</p>
+          </div>
+          <div id="divTitle">
+            <h3>genieten</h3>
+            <textarea spellcheck="false" id="titleDiscription">
+Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate hic, fugiat in, eius necessitatibus autem harum, ab quas amet ipsa consectetur voluptatem quasi nulla dolorum mollitia illum? Voluptas, voluptatum magni?</textarea
+            >
+          </div>
+        </div>
+      </div>
+      <input id="saveBtn" type="button" value="save" />
+      <input id="loadBtn" type="file" />
+      <label for="loadBtn">load</label>
     </div>
     <script type="module" src="scripts.js"></script>
-</body>
+  </body>
 </html>
