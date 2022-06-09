@@ -21,7 +21,7 @@ const titlePlace = document.getElementById("addTitlePlace")
 const addTitleDiscription = document.getElementById("addTitleDiscription")
 const save = document.getElementById("saveBtn")
 const load = document.getElementById("loadBtn")
-
+const titleDiscription = document.getElementById("titleDiscription")
 
 function init()
 {
@@ -56,7 +56,8 @@ function addItemsAction() {
         price: addItemsPrice.value,
         halfprice: addItemsHalf.value,
         discription: addItemsDisc.value,
-        titleDiscription: "none"
+        titleDiscription: "none",
+        height: ""
     }
     if(itemPlace.value === "place" || itemPlace.value === "")
     {
@@ -84,7 +85,8 @@ function addTitleAction() {
         price: "none",
         halfprice: "none",
         discription:"none",
-        titleDiscription: addTitleDiscription.value
+        titleDiscription: addTitleDiscription.value,
+        height: ""
     }
     if(titlePlace.value === "place" || titlePlace.value === "")
     {
@@ -122,13 +124,15 @@ function toHtml(save){
     let parent = document.getElementById("pageContent")
     parent.innerHTML = ""
     itemList.forEach(el => {
+        let discription = ""
+        let title = ""
         if(el.isTitle === false)
         {
             let wrapperDiv = document.createElement("div")
             wrapperDiv.setAttribute("id", "item")
-            let title = document.createElement("h4")
+            title = document.createElement("h4")
             title.setAttribute("id", "title")
-            title.innerHTML = save === true ? `${el.name}` : `${el.id}. ${el.name}`
+            title.innerHTML = save === true ? `${el.name}` : `${el.name}`
             let prijs = document.createElement("h4")
             prijs.setAttribute("id", "prijs")
             prijs.innerHTML = `€${el.price}`
@@ -142,9 +146,13 @@ function toHtml(save){
             {
                 halfprijs.innerHTML = `€${el.halfprice}`
             }
-            let discription = document.createElement("p")
+            discription = document.createElement("textarea")
             discription.setAttribute("id", "discription")
+            discription.setAttribute("spellcheck", "false")
             discription.innerHTML = `${el.discription}`
+            discription.onclick = resize
+            discription.oninput = resize
+            discription.style.height = el.height
             wrapperDiv.appendChild(title)
             wrapperDiv.appendChild(prijs)
             wrapperDiv.appendChild(halfprijs)
@@ -155,14 +163,44 @@ function toHtml(save){
         {
             let wrapperDiv = document.createElement("div")
             wrapperDiv.setAttribute("id", "divTitle")
-            let title = document.createElement("h3")
-            title.innerHTML = save === true ? `${el.name}` : `${el.id}. ${el.name}`
-            let discription = document.createElement("p")
+            //title
+            title = document.createElement("textarea")
+            title.setAttribute("id", "titleTitle")
+            title.setAttribute("spellcheck", "false")
+            title.setAttribute("rows", "1")
+            title.onclick = resizeTitle
+            title.oninput = resizeTitle
+            title.innerHTML = save === true ? `${el.name}` : `${el.name}`
+            //discription
+            discription = document.createElement("textarea")
             discription.setAttribute("id", "titleDiscription")
+            discription.setAttribute("spellcheck", "false")
             discription.innerHTML = `${el.titleDiscription}`
+            discription.onclick = resize
+            discription.oninput = resize
+            discription.style.height = el.height
             wrapperDiv.appendChild(title)
             wrapperDiv.appendChild(discription)
             parent.appendChild(wrapperDiv)
+        }
+        function resize() {
+            discription.style.height = "0px"
+            discription.style.height = discription.scrollHeight + "px"
+            el.height = discription.style.height
+            if(el.isTitle === true)
+            {
+                el.titleDiscription = discription.value
+            }
+            if(el.isTitle === false)
+            {
+                el.discription = discription.value
+            }
+        }
+        function resizeTitle(){
+            discription.style.height = "0px"
+            discription.style.height = discription.scrollHeight + "px"
+            el.height = discription.style.height
+            el.name = title.value
         }
     });
 }
@@ -187,6 +225,11 @@ function loadAction() {
         reader.readAsText(file, "UTF-8")
         reader.onload = function (evt) {
             itemList = JSON.parse(evt.target.result)
+            idValue = 0
+            itemList.forEach(el => {
+                el.id = idValue
+                idValue += 1
+            });
             toHtml(false)
         }
     }

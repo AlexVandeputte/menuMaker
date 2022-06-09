@@ -2,6 +2,16 @@ body{
     background-color: #1e1e1e;
     font-family: 'Times New Roman', Times, serif;
 }
+#discription {
+    border: 0;
+    min-width: 100%;
+    min-height: 0px;
+    resize: none;
+    overflow: hidden;
+    background-color: wheat;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+}
 #mainDiv {
     display: grid;
     grid-template-areas: "a b"
@@ -121,12 +131,36 @@ body{
         padding: 0px;
         color: red;
     }
+    #titleTitle{
+        /* vertical-align: top; */
+        margin: 0px;
+        padding: 0px;
+        color: red;
+        border: none;
+        min-width: 100%;
+        min-height: 0px;
+        resize: none;
+        overflow: hidden;
+        font-weight: bold;
+        font-size: 18.72px;
+        line-height: 22px;
+        background-color: wheat;
+        font-family: 'Times New Roman', Times, serif;
+    }
     #titleDiscription {
+        vertical-align: top;
         margin: 0;
         padding: 0;
-        margin-top: 2px;
         color: red;
-        
+        border: none;
+        min-width: 100%;
+        min-height: 0px;
+        resize: none;
+        overflow: hidden;
+        overflow-x: hidden;
+        background-color: wheat;
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
     }
     /* item */
     #item{
